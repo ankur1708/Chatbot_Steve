@@ -1,0 +1,296 @@
+<!-- Stevie-->
+<div id="chatBox" class="hvr-buzz">
+	<div class="chat_header"><span class="glyphicon glyphicon-record"></span> &nbsp;<span class="assisted_checkout_header_text">Steve: Cashier</span> <span class="glyphicon glyphicon-minus minimize_chat"></span></div>
+	<div id="chatArea"><div class="spinner"><div class="double-bounce1"></div><div class="double-bounce2"></div></div></div>
+	<div id="chatType">
+		<input id="textArea" placeholder="Type here.."/>
+		<button id='chatSubmit'>
+			Send
+		</button>
+	</div>
+</div>
+<div class="wrapper">
+	<div class="cart_val">
+		<span class="cart_says">Your cart value is $99. Click below for</span><br/>
+    <button class="button launch"> Easy Checkout</button>
+    </div>
+</div>
+
+<!-- Bubble css-->
+<style type="text/css">
+
+.wrapper {
+    text-align: center;
+}
+
+.cart_val {
+	position: absolute;
+	top: 33%;
+	left: 33%;
+
+}
+
+.cart_says {
+	font-size: 20px;
+}
+
+.launch {
+    /* position: absolute;
+    top: 50%; */
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 53px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#chatBox {
+    width: 300px;
+    background-color: white;
+    position: fixed;
+    bottom: 0px;
+    left: 10px;
+    display: none;
+}
+#chatArea {
+    width: 300px;
+    height: 300px;
+    background-color: #FFF;
+    padding: 10px;
+    overflow: auto;
+    border-right: 1px solid #e2e2e2;
+    border-left: 1px solid #e2e2e2;
+}
+#textArea {
+    width: 100%;
+    height: 34px;
+    border: 0px;
+    border-top: 1px solid #e2e2e2;
+    padding-left: 10px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+    font-size: 12px;
+    border-right: 1px solid #e2e2e2;
+    border-left: 1px solid #e2e2e2;
+}
+#chatSubmit {
+    height: 30px;
+    display: none;
+}
+#chat_time_out {
+    display: inline-block;
+}
+.chat_header {
+    height: 40px;
+    padding-left: 10px;
+    background-color: #1B191B;
+    font-size: 15px;
+    color: white;
+    line-height: 40px;
+    cursor: pointer;
+}
+.minimize_chat {
+    float: right;
+    margin-top: 12px;
+    margin-right: 7px;
+}
+
+.bubble{
+    background-color: #e2e2e2;
+    display: inline-block;
+    padding: 10px 18px;
+    position: relative;
+    vertical-align: top;
+    font-family: 'Segoe UI', serif;
+    font-size: 15px;
+}
+
+.bubble::before {
+    background-color: #e2e2e2;
+    content: "\00a0";
+    display: block;
+    height: 16px;
+    position: absolute;
+    top: 11px;
+    transform:             rotate( 29deg ) skew( -35deg );
+        -moz-transform:    rotate( 29deg ) skew( -35deg );
+        -ms-transform:     rotate( 29deg ) skew( -35deg );
+        -o-transform:      rotate( 29deg ) skew( -35deg );
+        -webkit-transform: rotate( 29deg ) skew( -35deg );
+    width:  16px;
+}
+
+.bot {
+    float: left;   
+    margin: 5px 45px 5px 20px;  
+    position: relative;
+    left: 14px;       
+}
+
+.bot::before {
+    left: -5px;           
+}
+
+.master {
+    float: right;    
+    margin: 5px 20px 5px 45px;     
+    background-color: #555;
+    color: white; 
+    position: relative;
+    right: 14px;   
+}
+
+.master::before {
+    right: -5px;    
+    background-color: #555;
+    color: white;
+}
+.bot_avatar{
+  position: absolute;
+  top: 30px !important;
+  left: 0;
+  float: left;
+}
+.user_avatar{
+  position: absolute;
+  top: 18px !important;
+  right: 0;
+  float: right;
+}
+.bubble_container{
+  float: left;
+  width: 100%;
+  position: relative;
+}
+.chat_loading{
+  width: 45px;
+}
+.backgroundBlink{
+  background-color: #B5B5B5;
+}
+.chat_header{
+    -webkit-transition: background 1.0s ease-in-out;
+    -moz-transition:    background 1.0s ease-in-out;
+    -ms-transition:     background 1.0s ease-in-out;
+    transition:         background 0.50s ease-in-out;
+}
+/* Buzz */
+@-webkit-keyframes hvr-buzz {
+  50% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+
+  100% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+}
+
+@keyframes hvr-buzz {
+  50% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+
+  100% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+}
+
+.hvr-buzz {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+}
+.hvr-buzz-shake {
+  -webkit-animation-name: hvr-buzz;
+  animation-name: hvr-buzz;
+  -webkit-animation-duration: 0.15s;
+  animation-duration: 0.15s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+ .spinner {
+  width: 30px;
+  height: 30px;
+  margin-top: 8px;
+  float: right;
+  margin-right: 23px;
+  position: absolute;
+  z-index: 199;
+  bottom: 52px;
+  left: 5px;
+  display: none;
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #121212;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+</style>
+
+<!-- Stevie End -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="steve.min.js"></script>
+<script type="text/javascript">
+  $('.launch').click(function(){
+  	$('#chatBox').show();
+	GoSteveGo();
+	$('.wrapper').hide();
+  });
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-77528968-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
